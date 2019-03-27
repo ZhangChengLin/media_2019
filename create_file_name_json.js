@@ -27,7 +27,8 @@ function getIndexOfPathByDeep(obj, dir, curDir, deep) {
 
 }
 
-const dir = '03';
-const paths = __dirname + "\\" + dir + "\\" + 'json.json';
-
-fs.writeFileSync(paths, JSON.stringify(getIndexByPath(dir, 1)));
+const dir = ['03', 'ziyang'];
+for (let i = 0; i < dir.length; i++) {
+    const paths = __dirname + "\\" + dir[i] + "\\" + 'json.json';
+    fs.writeFileSync(paths, JSON.stringify(getIndexByPath(dir[i], 1)));
+}
